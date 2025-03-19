@@ -49,7 +49,7 @@ starting session | provider: anthropic model: claude-3-5-sonnet-latest
 Goose is running! Enter your instructions, or try asking what goose can do.
 
 ( O)> yf__history AAPL
-I'll try getting Apple's stock history again now that we've fixed the code.
+I'll try getting Apple's stock history now.
 ─── history | yf ──────────────────────────
 symbol: AAPL
 
