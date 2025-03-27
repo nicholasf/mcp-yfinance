@@ -1,5 +1,7 @@
 A simple wrapper around the classic [yFinance](https://github.com/ranaroussi/yfinance) that operates as an MCP tool.
 
+Note - this tool passes back a Pandas Dataframe to the MCP host, so it expects that to be understood by the host.
+
 ## Install
 
 Register it as an extension in your MCP host.
@@ -73,4 +75,10 @@ Would you like to:
 Just let me know what information would be most helpful!
 
 
+```
+
+## Running tests
+
+```
+pytest -v
 ```
