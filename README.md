@@ -1,6 +1,6 @@
 A simple wrapper around the classic [yFinance](https://github.com/ranaroussi/yfinance) that operates as an MCP tool.
 
-Note - this tool passes back a Pandas Dataframe to the MCP host, so it expects that to be understood by the host.
+Note - this tool passes back a Pandas Dataframe to the MCP host, so it expects that to be understood by the host. It was written using [Goose](https://github.com/block/goose) as the MCP Host and [Claude Sonnet](https://www.anthropic.com/claude/sonnet) 3.5 as the integrated LLM.
 
 ## Install
 
