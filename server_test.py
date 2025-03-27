@@ -13,7 +13,7 @@ def mock_yf_ticker(monkeypatch):
 
 @pytest.mark.asyncio
 async def test_history_calls_ticker_history(mock_yf_ticker):
-    mock_ticker, mock_history = mock_yf_ticker
+    _, mock_history = mock_yf_ticker
     mock_history.return_value = "mocked_data"
     
     result = await history("AAPL", period="1d", interval="1m")
@@ -30,16 +30,4 @@ async def test_history_passes_kwargs_to_ticker_history(mock_yf_ticker):
     result = await history("AAPL", **kwargs)
 
     mock_ticker.history.assert_called_once_with(**kwargs)
-
-    print(3)
     assert result == "mocked_data"
-
-@pytest.mark.asyncio
-async def test_basic():
-    result = await history("AAPL", period="1d", interval="1m")
-    print("result is: ", result)
-    assert True
-    print("ok")
-
-
-print("done")
