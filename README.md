@@ -2,7 +2,7 @@ A simple wrapper around the classic [yFinance](https://github.com/ranaroussi/yfi
 
 Note - this tool passes back a Pandas Dataframe to the MCP host, so it expects that to be understood by the host. It was written using [Goose](https://github.com/block/goose) as the MCP Host and [Claude Sonnet](https://www.anthropic.com/claude/sonnet) 3.5 as the integrated LLM.
 
-I've so far used it to fetch daily stock prices for individual instruments. When I've asked the LLM to perform some more advanced aggregations I've quickly hit token limits from Anthropic, which I assume is because they recognise that it's a dataframe and want to charge for that sort of operation. 
+I've so far used it to fetch daily stock prices for individual instruments. When I've asked the LLM to perform some more advanced aggregations I've quickly hit token limits from Anthropic. 
 
 This tool is meant as a demo, starting point or a proof of concept.
 
