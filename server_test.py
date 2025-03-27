@@ -1,7 +1,6 @@
 import pytest
-import mcp
 from server import history
-from unittest.mock import AsyncMock, MagicMock
+from unittest.mock import MagicMock
 
 @pytest.fixture
 def mock_yf_ticker(monkeypatch):
