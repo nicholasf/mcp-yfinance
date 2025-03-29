@@ -14,6 +14,15 @@ async def history(symbol: str, **kwargs) -> pd.DataFrame:
     ticker = yf.Ticker(symbol)
     return ticker.history(**kwargs)
 
+@mcp.tool()
+async def latest(symbol: str) -> float:
+    """
+    Get the latest stock price for a given symbol.
+    """
+    ticker = yf.Ticker(symbol)
+    df = ticker.history(period="1d")
+    return df["Close"].iloc[-1]
+
 if __name__ == "__main__":
     # Initialize and run the server
     mcp.run(transport='stdio')

@@ -1,6 +1,7 @@
 import pytest
-from server import history
+from server import history, latest
 from unittest.mock import MagicMock
+import pandas as pd
 
 @pytest.fixture
 def mock_yf_ticker(monkeypatch):
@@ -30,3 +31,13 @@ async def test_history_passes_kwargs_to_ticker_history(mock_yf_ticker):
 
     mock_ticker.history.assert_called_once_with(**kwargs)
     assert result == "mocked_data"
+
+@pytest.mark.asyncio
+async def test_latest_returns_latest_close_price(mock_yf_ticker):
+    _, mock_history = mock_yf_ticker
+    mock_history.return_value = pd.DataFrame({"Close": [150.0]})
+    
+    result = await latest("AAPL")
+    
+    mock_history.assert_called_once_with(period="1d")
+    assert result == 150.0
